@@ -1,4 +1,4 @@
-import { Amplify, Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 /* import '@aws-amplify/ui-react/styles.css'; */
 import awsExports from './aws-exports';
@@ -7,12 +7,12 @@ import './App.css';
 
 Amplify.configure(awsExports);
 
-async function onSignOutClick() {
+/* async function onSignOutClick() {
   await Auth.signOut()
       .then(data => console.log(data))
       .catch(err => console.log(err));
  }
-
+*/
 function App() {
     return (
       <div className="App">
@@ -29,10 +29,12 @@ function App() {
           >
           En savoir plus sur le ZéPAC
         </a>
-        <button onClick={this.onSignOutClick}>Sign out</button>
       </header>
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  includeGreetings: true;
+}  
+);
