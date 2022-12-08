@@ -9,7 +9,7 @@ import './App.css';
 
 Amplify.configure(awsExports);
 
-function App(/*{ signOut, user }*/) {
+function App({ signOut, user }) {
     return (
       <div className="App">
       <header className="App-header">
@@ -26,6 +26,7 @@ function App(/*{ signOut, user }*/) {
           En savoir plus sur le ZéPAC
         </a>
       </header>
+      <button onClick={signOut}>Sign out</button>
     </div>
   );
 }
