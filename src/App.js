@@ -1,15 +1,13 @@
-import { Amplify } from 'aws-amplify';
-
+import { Amplify, onSignOutClick} from 'aws-amplify';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 /* import '@aws-amplify/ui-react/styles.css'; */
-
 import awsExports from './aws-exports';
 import logo from './intuis.gif'; 
 import './App.css';
 
 Amplify.configure(awsExports);
 
-function App({ signOut, user }) {
+function App() {
     return (
       <div className="App">
       <header className="App-header">
@@ -22,11 +20,11 @@ function App({ signOut, user }) {
           href="https://www.auer.fr/fr/produits/chauffe-eau-thermodynamique-et-eau-chaude-sanitaire-collectif-zepac70/"
           target="_blank"
           rel="noopener noreferrer"
-        >
+          >
           En savoir plus sur le ZéPAC
         </a>
+        <button onClick={onSignOutClick}>Sign out</button>
       </header>
-      <button onClick={signOut}>Sign out</button>
     </div>
   );
 }
