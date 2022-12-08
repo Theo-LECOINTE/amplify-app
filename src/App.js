@@ -35,6 +35,6 @@ function App() {
 }
 
 export default withAuthenticator(App, {
-  includeGreetings: true;
+  includeGreetings: true,
 }  
 );
