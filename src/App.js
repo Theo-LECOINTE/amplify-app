@@ -1,4 +1,4 @@
-import { Amplify, Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 /* import '@aws-amplify/ui-react/styles.css'; */
 import awsExports from './aws-exports';
@@ -8,14 +8,6 @@ import logo from './intuis.gif'
 
 Amplify.configure(awsExports);
 
-async function signOut() {
-  try {
-      await Auth.signOut({ global: true });
-  } catch (error) {
-      console.log('error signing out: ', error);
-  }
-}
-
 function App() {
   return (
     <div className="App">
@@ -24,17 +16,19 @@ function App() {
         <p>
           Bienvenue sur la plateforme de supervision d'installations ZéPAC
         </p>
-        <a
+        
+      </header>
+      <a
           className="App-link"
           href="https://www.auer.fr/fr/produits/chauffe-eau-thermodynamique-et-eau-chaude-sanitaire-collectif-zepac70/"
           target="_blank"
           rel="noopener noreferrer"
           >
           En savoir plus sur le ZéPAC
-        </a>
-      </header>
-      <button onClick={signOut}>Bouton</button>
-    </div>
+      </a>
+      <footer></footer>
+      <AmplifySignOut className='signout' onClick={AmplifySignOut}></AmplifySignOut>
+    </div> 
   )
 }
 
