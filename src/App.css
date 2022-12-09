@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Montserrat';
 }
 
 .App-logo {
@@ -40,3 +41,15 @@
   }
 }
 */
+
+.App-SignOut{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.App-Back{
+  position: absolute;
+  bottom: 0px;
+  left:0%;
+}
